@@ -4,7 +4,7 @@ A React + Vite application for managing hierarchical card trees, with point requ
 
 ---
 
-## 🚀 [Live Demo](https://task-five-wine.vercel.app)
+## 🚀 [Live Demo](https://tree-task.vercel.app)
 
 ---
 
