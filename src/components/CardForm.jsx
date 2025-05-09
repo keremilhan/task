@@ -12,12 +12,23 @@ const CardForm = ({ onCancel, parentId, treeId }) => {
 
   useEffect(() => {
     if (formRef.current) {
-      formRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-        inline: "nearest",
-      });
-      formRef.current.focus();
+      const rect = formRef.current.getBoundingClientRect();
+      const fullyVisible =
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <=
+          (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <=
+          (window.innerWidth || document.documentElement.clientWidth);
+
+      if (!fullyVisible) {
+        formRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+          inline: "nearest",
+        });
+        formRef.current.focus();
+      }
     }
   }, []);
   return (
