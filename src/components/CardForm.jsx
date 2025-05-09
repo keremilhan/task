@@ -24,10 +24,9 @@ const CardForm = ({ onCancel, parentId, treeId }) => {
       if (!fullyVisible) {
         formRef.current.scrollIntoView({
           behavior: "smooth",
-          block: "start",
+          block: "center",
           inline: "nearest",
         });
-        formRef.current.focus();
       }
     }
   }, []);
